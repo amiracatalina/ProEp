@@ -1,0 +1,101 @@
+//@media only screen and (max-width: 1024px) {
+//  .eltdf-rf-row {
+//    margin-left: -15px;
+//    margin-right: -15px;
+//    width: auto;
+//  }
+//}
+//
+//@media only screen and (max-width: 1024px) {
+//  .eltdf-rf-col-holder,  .eltdf-rf-col-holder.eltdf-rf-btn-holder,  .eltdf-rf-col-holder.eltdf-rf-time-col {
+//    width: 50%;
+//    padding: 0 15px;
+//    margin-bottom: 30px;
+//    box-sizing: border-box;
+//  }
+//}
+//
+
+
+
+.date-time-group{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.field-holder {
+  min-width: 232px;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+
+  .field-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    line-height: 60px;
+    height: 100%;
+    text-align: center;
+  }
+
+  .field-icon span {
+    color: #c5b358;
+    font-size: 21px;
+    vertical-align: middle;
+  }
+
+  select {
+    padding: 20px 65px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
+
+  select, input[type=text] {
+    color: #fff;
+    background-color: #303030;
+  }
+
+  .field-select-icon {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 100%;
+    color: #b9babb;
+    font-size: 15px;
+    line-height: 60px;
+  }
+  input[type=text], select {
+    border: none;
+    outline: 0;
+    font-family: "Raleway", sans-serif;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    color: black;
+    font-size: 13px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+    border-radius: 0;
+    letter-spacing: .12em;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+  .button{
+    min-height: 56.7px;
+  }
+}
+
+.calendar-holder{
+  max-width: 232px;
+}
+
+.ui-datepicker-header{
+  background-color: #2e6da4;
+}

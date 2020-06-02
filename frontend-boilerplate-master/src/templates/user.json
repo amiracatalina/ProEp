@@ -1,0 +1,28 @@
+{
+  "textboxFirstName": {
+    "type": "text",
+    "placeholder": "First Name",
+    "labelName": "First Name"
+  },
+  "textboxLastName": {
+    "type": "field",
+    "placeholder": "Last Name",
+    "labelName": "Last Name"
+  },
+  "textboxEmail": {
+    "type": "field",
+    "placeholder": "E-mail",
+    "labelName": "E-mail"
+  },
+  "textboxPhoneNumber": {
+    "type": "field",
+    "placeholder": "Phone",
+    "labelName": "Phone"
+  },
+  "buttonReservationsUser": {
+    "text": "Reserve a table"
+  },
+  "buttonProfileUser": {
+    "text": "Save Info"
+  }
+}

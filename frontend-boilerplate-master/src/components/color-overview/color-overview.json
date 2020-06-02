@@ -1,0 +1,24 @@
+{
+  "colors": [
+    {
+      "color": "#242582",
+      "label": "Blue primary"
+    },
+    {
+      "color": "#553D67",
+      "label": "Dark violet"
+    },
+    {
+      "color": "#F64C72",
+      "label": "Light pink"
+    },
+    {
+      "color": "#99739E",
+      "label": "Light violet"
+    },
+    {
+      "color": "#2f2FA2",
+      "label": "Blue light"
+    }
+  ]
+}

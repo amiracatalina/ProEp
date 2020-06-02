@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Foodie</title>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="theme-color" content="#000000">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/static/css/all.css">
+
+  {#Calendar#}
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  {#Pagination#}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
+  {#Filtering, Infinite scroll#}
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+
+  {#Icons#}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Awesome fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <script>
+    (function(d, w) {
+      if (!('devicePixelRatio' in w)) return
+
+      d.documentElement.className += ' has-js'
+
+      function loadInOrder(src) {
+        var s = d.createElement('script')
+        var deps = [].slice.call(arguments).slice(1)
+        s.src = src
+        s.onload = function() {
+          deps.length && loadInOrder.apply(null, deps)
+        }
+        s.onerror = console.error
+        d.head.appendChild(s)
+      }
+
+      var supported =
+        'Symbol' in w &&
+        'Promise' in w &&
+        'assign' in Object &&
+        'from' in Array &&
+        Symbol.iterator in NodeList.prototype &&
+        Symbol.iterator in HTMLCollection.prototype
+
+      if (supported) {
+        loadInOrder('/static/js/main.js')
+      } else {
+        loadInOrder('/static/js/polyfill.js', '/static/js/main.js')
+      }
+
+    }(document, window))
+  </script>
+</head>
+
+<body {% if bodyClass %}class={{ bodyClass }}{% endif %}>
+{%- block body %}{% endblock -%}
+</body>
+
+</html>

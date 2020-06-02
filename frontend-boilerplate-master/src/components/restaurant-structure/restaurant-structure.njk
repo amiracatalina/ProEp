@@ -1,0 +1,33 @@
+<div class="container-restaurant" data-module="restaurant-structure/restaurant-structure">
+  <div class="header-title" style="padding-top: 20px">
+    <h1 class="first-title" style="color: black; margin-bottom: 10px">Design your restaurant floor plan</h1>
+    {% component "separator" %}
+    <h2 class="second-title"style="color: black">Drag and drop inside the square</h2>
+  </div>
+  <div class="app">
+    <div class="table-plan" style="display: flex;justify-content: space-between;flex-direction: column;   box-shadow: 0 0 10px #ccc;">
+      <div id="source">
+        <h4 style="margin-top: 10px">Table for 2</h4>
+        <div class="rect" draggable="true"></div>
+        <h4>Table for 4</h4>
+        <div class="rect1" draggable="true"></div>
+        <h4>Table for 6</h4>
+        <div class="rect2" draggable="true"></div>
+        <h4>Bar</h4>
+        <div class="circle" draggable="true"></div>
+      </div>
+      <a id="download" download="restaurantStructure.png">
+        <button class="button" type="button" onClick="download()">Download</button>
+      </a>
+    </div>
+    <div class="target"><canvas id="canvas" width="800px" height="400px"></canvas></div>
+  </div>
+</div>
+<script>
+  var download = document.getElementById("download");
+  var image = document.getElementById("canvas").toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+  download.setAttribute("href", image);
+  //download.setAttribute("download","archive.png");
+
+</script>

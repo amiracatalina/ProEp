@@ -1,0 +1,161 @@
+<!--Tabs to switch-->
+<div class="nav-restaurant-holder">
+  <ul class="nav-restaurant-tabs">
+    <li class="filter active" rel="tab1">
+      <span>About</span>
+    </li>
+    <li class="filter" rel="tab2">
+      <span>Menu</span>
+    </li>
+    <li class="filter" rel="tab3">
+      <span>Reviews</span>
+    </li>
+  </ul>
+</div>
+<!--Content-->
+<div class="tab-slider--container">
+  <!--About div-->
+  <div id="tab1" class="tab-slider--body about">
+    <h2 class="title-single-restaurant">About {{ nameRestaurant }}</h2>
+    <p class="description">{{ descriptionAbout }}</p>
+    <div class="map-single-restaurant">
+      {% component "map" %}
+    </div>
+    <div class="personal-information">
+      <div class="opening-hours">
+        <h3 style="font-family: 'Raleway', sans-serif"><i class="fas fa-clock fa-sm"></i>Opening hours</h3>
+        <p class="mon">Monday:<span style="width: 20px"></span> Closed</p>
+        <p class="tue">Tuesday: 14:00 - 18:00</p>
+        <p class="wed">Wednesday: 8:00 - 18:00</p>
+        <p class="thu">Thursday: 8:00 - 18:00</p>
+        <p class="fri">Friday: 8:00 - 18:00</p>
+        <p class="sat">Saturday: 8:00 - 18:00</p>
+        <p class="sun">Sunday: 8:00 - 18:00</p>
+      </div>
+      <div class="address-telephone-website">
+        <h3><i class="fas fa-map-marker-alt fa-sm"></i>Address</h3>
+        <h4 style="color: gray">{{ streetAddress }}</h4>
+        <h4 style="color: gray">{{ postalCode }}, {{ city }}</h4>
+        <h4 style="color: #c5b358"><i class="fas fa-phone fa-lg"></i>{{ phoneRestaurant }}</h4>
+        <h4><i class="fas fa-utensils fa-lg"></i> <a href="{{ websiteRestaurant }}"
+                                                     style=" cursor: pointer;text-decoration: none;color: #c5b358">To the website</a></h4>
+      </div>
+    </div>
+  </div>
+  <!--Menu div-->
+  <div id="tab2" class="tab-slider--body menu">
+    <h2 class="title-single-restaurant">Menu {{ nameRestaurant }}</h2>
+    <p class="description">{{ descriptionMenu }}</p>
+
+    <div class="menu-overview">
+      <div class="overview-top">
+        <div class="left">
+          {% component "separator" %}
+        </div>
+        <img width="64" height="64"
+             src="https://gourmand.elated-themes.com/wp-content/uploads/2018/01/menu-title-img-1.png" alt="a">
+        <div class="right">
+          {% component "separator" %}
+        </div>
+      </div>
+      <div class="menu-items">
+        <div class="header-title" style="padding-left: 0; padding-top: 20px">
+          <h1 class="first-title" style="color: rgba(0,0,0,0.84); font-weight: 100">Cuisine</h1>
+          {% component "separator" %}
+        </div>
+        <table>
+          {% for item in itemsMenu %}
+            <tr>
+              <td>{{ item.itemName }}</td>
+              <td>${{ item.itemPrice }}</td>
+            </tr>
+          {% endfor %}
+
+        </table>
+
+        <br>
+      </div>
+    </div>
+  </div>
+  <!--Reviews div-->
+  <div id="tab3" class="tab-slider--body reviews">
+    <h2 class="title-single-restaurant">Reviews {{ nameRestaurant }}</h2>
+    <div class="comments-all">
+      <div class="single-review-area">
+        <div class="reviewer-meta" style="display: flex;align-content: center">
+          <img src="../../static/img/user-image.jpg" alt="">
+          <div class="reviewer-content">
+            <div class="review-title-ratings">
+              <h3>For friends hangout is perfect</h3>
+              <div>{% component "separator" %}</div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus.
+              Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta lorem blandit aliquam eget quis
+              ipsum. Vivamus accumsan consequat ligula non volutpat.</p>
+          </div>
+        </div>
+        <div class="reviewer-name">
+          <h4>Christinne Deli</h4>
+        </div>
+      </div>
+      <!--second one-->
+      <div class="single-review-area">
+        <div class="reviewer-meta" style="display: flex;align-content: center">
+          <img src="../../static/img/user-image.jpg" alt="">
+          <div class="reviewer-content">
+            <div class="review-title-ratings">
+              <h3>For friends hangout is perfect</h3>
+              <div>{% component "separator" %}</div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus.
+              Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta lorem blandit aliquam eget quis
+              ipsum. Vivamus accumsan consequat ligula non volutpat.</p>
+          </div>
+        </div>
+        <div class="reviewer-name">
+          <h4>Christinne Deli</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('document').ready(function() {
+    $('.tab-slider--body').hide()
+    $('.tab-slider--body:first').show()
+  })
+
+  $('document').ready(function() {
+    $('.nav-restaurant-holder li').click(function() {
+      $('.tab-slider--body').hide()
+      const activeTab = $(this).attr('rel')
+      $('#' + activeTab).fadeIn()
+      if ($(this).attr('rel') == 'tab2') {
+        $('.nav-restaurant-tabs').removeClass('slide2').addClass('slide1')
+
+      } else if ($(this).attr('rel') == 'tab3') {
+        $('.nav-restaurant-tabs').removeClass('slide1').addClass('slide2')
+      } else {
+        $('.nav-restaurant-tabs').removeClass('slide1 slide2')
+      }
+      $('.nav-restaurant-holder li').removeClass('active')
+      $(this).addClass('active')
+    })
+  })
+</script>
+
+<script>
+  let d = new Date()
+  const weekday = new Array(7)
+  weekday[0] = 'sun'
+  weekday[1] = 'mon'
+  weekday[2] = 'tue'
+  weekday[3] = 'wed'
+  weekday[4] = 'thu'
+  weekday[5] = 'fri'
+  weekday[6] = 'sat'
+
+  document.getElementsByClassName(weekday[d.getDay()])[0].classList.add('todaysDay')
+</script>

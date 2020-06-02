@@ -1,0 +1,9 @@
+{% if element === 'h1' %}
+    <h1>{{ text }}</h1>
+{% elseif element === 'h2' %}
+    <h2>{{ text }}</h2>
+{% elseif element === 'h3' %}
+    <h3>{{ text }}</h3>
+{% elseif element == 'p' %}
+    <p class="text-{{ size }}">{{ text }}</p>
+{% endif %}

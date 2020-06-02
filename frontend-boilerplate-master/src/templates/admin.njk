@@ -1,0 +1,262 @@
+{% extends '../layout/default.njk' %}
+{% block body %}
+  {% component "header" %}
+  <main id="main">
+    <section class="header-wrapper"
+             style="background-image: url('https://gourmand.elated-themes.com/wp-content/uploads/2018/02/team-parallax-1.jpg'); height: 50vh; background-size: cover;background-position: 0 calc(100% - 168px);background-attachment: fixed;">
+      <div class="header-title" style="padding-top: 80px">
+        <h1 class="first-title" style="font-weight: 900">My Account</h1>
+        {% component "separator" %}
+      </div>
+    </section>
+    <div class="user-body">
+      <div class="tab">
+        <div class="container-user">
+          <div class="avatar-upload">
+            <div class="avatar-edit">
+              <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"/>
+              <label for="imageUpload"><i class="fas fa-pencil-alt"></i></label>
+            </div>
+            <div class="avatar-preview">
+              <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=9);">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="tablinks" onclick="openCity(event, 'Structure')">Step 1 (Create Floor Plan)</button>
+        <button class="tablinks" onclick="openCity(event, 'Details')" id="defaultOpen">Step 2 (Restaurant Details)
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Reservations')">Reservations</button>
+        <div>
+          <button class="tablinks" onclick="openCity(event, 'Logout')">Logout <img src="./../static/img/logout.png"
+                                                                                   style="width: 22px; height: 20px; position: absolute; margin-left: 160px;">
+          </button>
+        </div>
+      </div>
+      <div id="Structure" class="tabcontent">
+        <h3>Restaurant Floor Plan</h3>
+          <p>Please follow the button, there you can create your floor plan according to your needs. Don't forget to
+            download it, you need to upload it later in step 2.</p>
+        {% component "button", {text: "Have fun", "href":"floorPlan.html"} %}
+      </div>
+      <div id="Details" class="tabcontent">
+        <h3>Restaurant Details</h3>
+        <div class="admin-group">
+          <div class="left">
+            <h4 class="form-group-title" style="margin-bottom: 0">General</h4>
+            {% component "separator" %}
+          </div>
+          <div class="form-group-two" style="display: flex;justify-content: space-evenly;">
+            <div class="form-group" style="">
+              <label for="restaurantName">
+                <small>Name</small>
+              </label>
+              <input type="text" class="form-control" id="restaurantName" placeholder="Tacos">
+              <div class="form-group">
+                <label for="streetAddress">
+                  <small>Street Address</small>
+                </label>
+                <input type="text" class="form-control" id="streetAddress" placeholder="Pastoor Peterstraat">
+              </div>
+            </div>
+            <div class="form-group-two" style="justify-content: space-evenly;">
+              <div class="form-group">
+                <label for="postalCode">
+                  <small>Postal Code</small>
+                </label>
+                <input type="text" class="form-control" id="postalCode" placeholder="5623LW">
+              </div>
+              <div class="form-group">
+                <label for="city">
+                  <small>City</small>
+                </label>
+                <input type="text" class="form-control" id="city" placeholder="Eindhoven">
+              </div>
+            </div>
+          </div>
+          <!--Contact info-->
+          <div class="left">
+            <h4 class="form-group-title" style="margin-bottom: 0">Contact</h4>
+            {% component "separator" %}
+          </div>
+          <div class="form-group-two" style="display: flex;justify-content: space-evenly;">
+            <div class="form-group" style="">
+              <label for="phoneNumber">
+                <small>Phone Number</small>
+              </label>
+              <input type="text" class="form-control" id="phoneNumber" placeholder="+31619463356">
+              <div class="form-group">
+                <label for="websiteRestaurant">
+                  <small>Website</small>
+                </label>
+                <input type="text" class="form-control" id="websiteRestaurant" placeholder="www.dominos.nl">
+              </div>
+            </div>
+            <div class="form-group-two" style="justify-content: space-evenly;">
+              <div class="form-group">
+                <label for="exampleInputEmail1">
+                  <small>Postal Code</small>
+                </label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="5623LW">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">
+                  <small>City</small>
+                </label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="Eindhoven">
+              </div>
+            </div>
+          </div>
+          <!--Menu Items -->
+          <div class="left">
+            <h4 class="form-group-title" style="margin-bottom: 0">Menu</h4>
+            {% component "separator" %}
+          </div>
+          <div class="addMenuItems" style="display: flex;">
+            <div class="form-group-two">
+              <div class="form-group">
+                <label for="exampleInputEmail1">
+                  <small>Dish name</small>
+                </label>
+                <input type="text" class="form-control" id="dish-name" placeholder="Enter dish name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">
+                  <small>Dish Price</small>
+                </label>
+                <input type="text" class="form-control" id="dish-price" placeholder="Enter dish price">
+              </div>
+              <div id="add-dish" style="margin-top: 20px; width: 232px">{% component "button" %}</div>
+            </div>
+
+            <div class="form-group-two">
+              <h1>Items</h1>
+              <div>
+                <p id="dishName"></p>
+                <p id="dishPrice"></p>
+              </div>
+              <p id="menuItems"></p>
+              <div onclick="localStorage.clear();">{% component "button",{"text":'Clear'} %}</div>
+            </div>
+          </div>
+          <!--Add photos-->
+          <div class="left">
+            <h4 class="form-group-title" style="margin-bottom: 0">Restaurant photos</h4>
+            {% component "separator" %}
+          </div>
+          <div class="addPhotos">
+            <div class="uploadOuterWrapper">
+              <div class="uploadOuter">
+          <span class="dragBox">
+          Drag and Drop the profile image
+          <input type="file" onChange="dragNdrop(event)" ondragover="drag()" ondrop="drop()" id="uploadFile"/>
+          </span>
+              </div>
+            </div>
+            <div class="uploadOuter">
+          <span class="dragBox">
+          Drag and Drop the structure
+          <input type="file" onChange="dragNdrop(event)" ondragover="drag()" ondrop="drop()" id="uploadFile"/>
+          </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="Reservations" class="tabcontent">
+        <h3>Reservations</h3>
+        <p>No reservations yet.</p>
+      </div>
+      <div id="Logout" class="tabcontent">
+        <h3>Log out</h3>
+        <p>Log out.</p>
+      </div>
+    </div>
+    {% component "footer" %}
+  </main>
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks
+      tabcontent = document.getElementsByClassName('tabcontent')
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = 'none'
+      }
+      tablinks = document.getElementsByClassName('tablinks')
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(' active', '')
+      }
+      document.getElementById(cityName).style.display = 'block'
+      evt.currentTarget.className += ' active'
+    }
+
+    document.getElementById('defaultOpen').click()
+
+    // Get the element with id="defaultOpen" and click on it
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader()
+        reader.onload = function(e) {
+          jQuery('#imagePreview').css('background-image', 'url(' + e.target.result + ')')
+          jQuery('#imagePreview').hide()
+          jQuery('#imagePreview').fadeIn(650)
+        }
+        reader.readAsDataURL(input.files[0])
+      }
+    }
+
+    jQuery('#imageUpload').change(function() {
+      readURL(this)
+
+
+    })
+
+    'use strict'
+
+    function dragNdrop(event) {
+      var fileName = URL.createObjectURL(event.target.files[0])
+      var preview = document.getElementById('preview')
+      var previewImg = document.createElement('img')
+      previewImg.setAttribute('src', fileName)
+      preview.innerHTML = ''
+      preview.appendChild(previewImg)
+    }
+
+    function drag() {
+      document.getElementById('uploadFile').parentNode.className = 'draging dragBox'
+    }
+
+    function drop() {
+      document.getElementById('uploadFile').parentNode.className = 'dragBox'
+    }
+  </script>
+  <!--Add to local storage with javascript in an array-->
+  <script>
+    let nameItem = localStorage.getItem('itemName')
+    let priceItem = localStorage.getItem('itemPrice')
+    let theArray = JSON.parse(localStorage.getItem('menuArray'))
+    console.log(theArray)
+    $('#dishName').text(nameItem)
+    $('#dishPrice').text(priceItem)
+
+    var plato = {}
+    var menu = []
+
+    $('#add-dish').on('click', function() {
+
+      let nombre = plato.name
+      let precio = plato.price
+      // nombre = $('#dish-name').val();
+      // precio = $('#dish-price').val();
+      plato.name = $('#dish-name').val()
+      $('#menuItems').text(nombre, precio)
+      plato.price = $('#dish-price').val()
+      // $('#dishPrice').text(precio);
+
+
+      menu.push(plato)
+      localStorage.setItem('itemName', nombre)
+      localStorage.setItem('itemPrice', precio)
+      localStorage.setItem('menuArray', JSON.stringify(menu))
+    })
+  </script>
+{% endblock %}

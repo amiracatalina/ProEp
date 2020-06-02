@@ -1,0 +1,39 @@
+{% extends '../layout/default.njk' %}
+{% set bodyClass="wrapper" %}
+{% block body %}
+
+<h3 class="text-center">Authentication</h3>
+<div class="container">
+  <form action="">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="email" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <button type="button" class="btn btn-primary center-block" onclick="auth()">Submit</button>
+  </form>
+</div>
+
+<script type="text/javascript">
+  auth= function(){
+    let xhttp = new XMLHttpRequest();
+    data={name:document.getElementById("email").value,password:document.getElementById("password").value}
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState==4 && xhttp.status==200) {
+        var response = JSON.parse(xhttp.responseText);
+        document.getElementById("token-display").innerHTML = response.token;
+      }
+      if(xhttp.readyState==4 && xhttp.status==403){
+        document.getElementById("token-display").innerHTML=JSON.parse(xhttp.responseText).message;
+      }
+    };
+    xhttp.open("POST", "https://proepapi.azurewebsites.net/api/Login/AddUser", true);
+    xhttp.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
+    xhttp.setRequestHeader("APIKey" ,"foodieAPIKey2019");
+    xhttp.send(JSON.stringify(data));
+  }
+</script>
+{% endblock %}

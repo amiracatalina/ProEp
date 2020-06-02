@@ -1,0 +1,22 @@
+{
+  "tvFirstName": {
+    "labelName": "First Name",
+    "placeholder": "e.g. Ana",
+    "type": "text"
+  },
+  "tvLastName": {
+    "labelName": "Last Name",
+    "placeholder": "e.g. Smith",
+    "type": "text"
+  },
+  "tvEmail": {
+    "labelName": "Email",
+    "placeholder": "asmith@gmail.com",
+    "type": "email"
+  },
+  "tvPassword": {
+    "labelName": "Password",
+    "placeholder": "12345678",
+    "type": "password"
+  }
+}

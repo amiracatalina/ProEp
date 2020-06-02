@@ -1,0 +1,35 @@
+{% extends '../layout/default.njk' %}
+
+{% set bodyClass='style-tile' %}
+{% block body %}
+  <main>
+    <section class="style-tile-title">
+
+    </section>
+    <section>
+      <h2 class="style-tile-title"> Colors Pallet </h2>
+      {% component 'color-overview' %}
+    </section>
+
+    <section>
+      <h2 class="style-tile-title"> Typography </h2>
+        {% component 'typography-overview' %}
+    </section>
+    <section>
+      <h2 class="style-tile-title"> Card </h2>
+      {% component 'card' %}
+    </section>
+    <section>
+      <h2 class="style-tile-title"> Text-box </h2>
+      {% component 'text-box' %}
+    </section>
+    <section>
+      <h2 class="style-tile-title"> Button </h2>
+      {% component "buttons-overview" %}
+    </section>
+    <section>
+      <h2 class="style-tile-title"> SIGN-UP/LOGIN </h2>
+      <button class="md-trigger" data-modal="modal-2">Fade in &amp; Scale</button>
+    </section>
+  </main>
+{% endblock %}

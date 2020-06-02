@@ -1,0 +1,30 @@
+.typography-item {
+    &-title {
+        font-size: rem(20px);
+        text-align: left;
+        border-bottom: 1px dotted lightgrey;
+    }
+
+    &-element {
+        text-align: left;
+    }
+
+    @media (min-width: $breakpoint-m) {
+      display: flex;
+      flex-basis: 33.33%;
+
+        &-title {
+            text-align: left;
+            min-width: 100px;
+            margin: $spacing-xs;
+            border-bottom: none;
+            border-right: 1px dotted lightgrey;
+        }
+
+        &-element {
+            margin-top: 12px;
+            flex: 1;
+        }
+    }
+}
+

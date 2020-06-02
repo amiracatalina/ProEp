@@ -1,0 +1,20 @@
+{% extends '../layout/default.njk' %}
+{% includeData '../components/card/card.json' %}
+{% block body %}
+  {% component "header" %}
+  <main class="singleRestaurant">
+    <section class="header-wrapper">
+      <div class="reserve-single"><span class="md-trigger" data-modal="modal-12">{% component "button" %}</span></div>
+      {% component "modal-form-reserve" %}
+    </section>
+    <section class="content-restaurant">
+      <div class="about-restaurant">
+        <h1 class="title-restaurant">{{ cardsData.nameRestaurant }}</h1>
+        {% component "separator" %}
+        <h3 class="location-restaurant">{{ cardsData.locationRestaurant }}</h3>
+      </div>
+      {% component "toggleTabs" , cardsData %}
+    </section>
+    {% component "footer" %}
+  </main>
+{% endblock %}

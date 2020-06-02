@@ -1,0 +1,78 @@
+<div class="date-time-group">
+  <div class="nr-person-group" style="margin: 10px;">
+    <div class="field-holder clearfix">
+          <span class="field-icon">
+            <span><i class="fas fa-user"></i></span>
+          </span>
+      <select name="partySize" class="eltdf-ot-people">
+        <option value="1">1 Person</option>
+        <option value="2">2 People</option>
+        <option value="3">3 People</option>
+        <option value="4">4 People</option>
+        <option value="5">5 People</option>
+        <option value="6">6 People</option>
+        <option value="7">7 People</option>
+        <option value="8">8 People</option>
+        <option value="9">9 People</option>
+        <option value="10">10 People</option>
+      </select>
+      <span class="field-select-icon">
+            <span class="ion-chevron-down"></span>
+          </span>
+    </div>
+  </div>
+  <div class="time-picker-group" style="margin: 10px;">
+    <div class="field-holder clearfix">
+          <span class="field-icon">
+            <span><i class="far fa-clock"></i></span>
+          </span>
+      <select name="ResTime" class="eltdf-ot-time">
+        <div style="overflow-y: scroll; height: 50vh">
+          <option value="12:00pm">12:00 PM</option>
+          <option value="12:30pm">12:30 PM</option>
+          <option value="1:00pm">1:00 PM</option>
+          <option value="1:30pm">1:30 PM</option>
+          <option value="2:00pm">2:00 PM</option>
+          <option value="2:30pm">2:30 PM</option>
+          <option value="3:00pm">3:00 PM</option>
+          <option value="3:30pm">3:30 PM</option>
+          <option value="4:00pm">4:00 PM</option>
+          <option value="4:30pm">4:30 PM</option>
+          <option value="5:00pm">5:00 PM</option>
+          <option value="5:30pm">5:30 PM</option>
+          <option value="6:00pm">6:00 PM</option>
+          <option value="6:30pm">6:30 PM</option>
+          <option value="7:00pm">7:00 PM</option>
+          <option value="7:30pm">7:30 PM</option>
+          <option value="8:00pm" selected="selected">8:00 PM</option>
+          <option value="8:30pm">8:30 PM</option>
+          <option value="9:00pm">9:00 PM</option>
+        </div>
+      </select>
+    </div>
+  </div>
+  <div class="calendar-holder" style="background-color: white;margin: 10px;">
+    <div class="field-holder clearfix">
+          <span class="field-icon">
+            <span><i class="fas fa-calendar-alt"></i></span>
+          </span>
+      <!--calendar-->
+        <input type="text" id="datepicker" style="padding: 20px 65px">
+    </div>
+  </div>
+  <div class="button-reserve-table" style="margin: 10px;">
+    <div class="field-holder">
+      {% component "button", {text: "Reserve", type:"btn-social"}%}
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#datepicker').datepicker();
+    $('#anim').on('change', function() {
+      $('#datepicker').datepicker('option', 'showAnim', 'fade');
+    });
+    $.datepicker.formatDate('yy-mm-dd', new Date(2007, 1 - 1, 26));
+  }); // eslint-disable-line semi
+</script>

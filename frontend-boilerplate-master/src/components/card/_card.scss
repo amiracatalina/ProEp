@@ -1,0 +1,142 @@
+$breakpoint-card-m: 600px;
+
+.restaurant_card {
+  position: relative;
+  display: block;
+  width: 600px;
+  //check it here for slider
+  margin: rem(10px) auto;
+  overflow: hidden;
+  //border-radius: 10px;
+  transition: all 0.4s;
+  box-shadow: 0 0 6px 0px rgba(0,0,0,.1);
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s;
+  }
+
+  .info_section {
+    position: relative;
+    width: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    //border-radius: 10px;
+
+    .restaurant_header {
+      position: relative;
+      padding: 25px;
+      height: 30%;
+
+      h2 {
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+      }
+
+      .type {
+        display: inline-block;
+        color: #959595;
+      }
+    }
+
+    .restaurant_social {
+      padding-left: 15px;
+      //padding-bottom: 20px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          color: rgba(0, 0, 0, 0.3);
+          transition: color 0.3s;
+          transition-delay: 0.15s;
+          margin: 0 10px;
+
+          &:hover {
+            transition: color 0.3s;
+            color: rgba(0, 0, 0, 0.7);
+          }
+
+          i {
+            font-size: 19px;
+            cursor: pointer;
+            margin-right: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  .blur_back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    background-size: cover;
+
+    .rating {
+      position: absolute;
+      right: 0;
+      margin-top: 10px;
+      margin-right: 15px;
+      color: white;
+      font-weight: 900;
+      padding: 5px;
+      border-radius: 10px;
+      border: 1px solid limegreen;
+      background-color: limegreen;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-card-m) {
+  .restaurant_header {
+    width: 65%;
+  }
+
+  .blur_back {
+    width: 40%;
+  }
+}
+
+//mobile screen
+@media screen and (max-width: $breakpoint-card-m) {
+  .restaurant_card {
+    width: 450px;
+    // margin: 0 auto;
+    height: auto;
+  }
+
+  .blur_back {
+    width: 80%;
+    background-position: -30% 50% !important;
+  }
+  .rating {
+    margin-top: 1px;
+  }
+  .restaurant_header {
+    width: 60%;
+  }
+
+  .info_section {
+    background: linear-gradient(to right, white 58%, transparent 10%);
+    display: inline-grid;
+  }
+
+  .restaurant_social {
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 470px){
+  .restaurant_card {
+    width: 370px;
+  }
+
+}

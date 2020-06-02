@@ -1,0 +1,93 @@
+{
+  "cards": [
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "7",
+      "type": ["Mexican"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "8",
+      "type": ["International"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "2",
+      "type": ["Mexican", "Spicy"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "8",
+      "type": ["International"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "2",
+      "type": ["Mexican", "Spicy"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },{
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "8",
+      "type": ["International"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "2",
+      "type": ["Mexican", "Spicy"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },{
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "8",
+      "type": ["International"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "2",
+      "type": ["Mexican", "Spicy"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Tacos",
+      "src": "/static/img/food.jpg",
+      "rating": "2",
+      "type": [
+        "Mexican",
+        "Spicy"
+      ],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    },
+    {
+      "nameRestaurant": "Mexico",
+      "src": "/static/img/food.jpg",
+      "rating": "2",
+      "type": ["Mexican", "Spicy"],
+      "nrReviews": "11",
+      "locationRestaurant": "Centrum"
+    }
+  ]
+}

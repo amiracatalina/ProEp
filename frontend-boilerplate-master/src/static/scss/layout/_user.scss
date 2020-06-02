@@ -1,0 +1,208 @@
+*{
+  box-sizing: border-box;
+}
+.userProfile {
+  .button-profile {
+    .button {
+      padding-top: 25px !important;
+      text-shadow: none;
+    }
+  }
+
+  .tab {
+  float: left;
+  border: 1px solid #ccc;
+  width: 260px;
+  height: 482px !important;
+  box-shadow: 0 0 5px #ccc;
+}
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color: #c5b358;
+    color: white;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding-left: 60px;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+  }
+
+  .container-user {
+    max-width: 960px;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 20px;
+  }
+  h1 small {
+    display: block;
+    font-size: 15px;
+    padding-top: 8px;
+    color: gray;
+  }
+
+  .avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 50px auto;
+    .avatar-edit {
+      position: absolute;
+      right: 12px;
+      z-index: 1;
+      top: 10px;
+      input {
+        display: none;
+        + label {
+          display: inline-block;
+          width: 34px;
+          height: 34px;
+          margin-bottom: 0;
+          border-radius: 100%;
+          background: #FFFFFF;
+          border: 1px solid transparent;
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+          cursor: pointer;
+          font-weight: normal;
+          transition: all .2s ease-in-out;
+          &:hover {
+            background: #f1f1f1;
+            border-color: #d6d6d6;
+          }
+          &:after {
+            color: #757575;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: auto;
+          }
+        }
+      }
+    }
+    .avatar-preview {
+      width: 192px;
+      height: 192px;
+      position: relative;
+      border-radius: 100%;
+      border: 6px solid #F8F8F8;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+      > div {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  .avatar-edit i {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    color: grey;
+  }
+  .user-group {
+    box-shadow: 0 0 10px #ccc;
+    max-width: 530px;
+    height: 300px;
+  }
+
+  .user-group-field {
+    display: flex;
+  }
+
+  .user-group-field-two {
+    padding: 40px;
+  }
+
+  .user-body {
+    padding: 100px 0 0 200px;
+  }
+
+  .user-group-field-two{
+    .text-box-group {
+      padding-bottom: 30px;
+    }
+  }
+
+  .button-profile {
+    display: flex;
+    justify-content: center;
+
+    .button {
+      background-color: #c5b358;
+      text-shadow: 1px 0 0 #444;
+      padding-bottom: 25px;
+      padding-top: 15px;
+      max-height: 0;
+    }
+  }
+
+  .button-reservation {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 50px;
+
+    .button {
+      background-color: #c5b358;
+      max-height: 0;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.tabcontent table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabcontent table th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+.tabcontent table td {
+  font-size: 14px;
+}
+
+.tabcontent tr {
+  &:first-child(even) {
+    background-color: #dddddd;
+  }
+}
+
+.tabcontent th {
+  background-color: #c5b358;
+  color: white;
+}

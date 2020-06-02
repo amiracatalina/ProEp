@@ -1,0 +1,21 @@
+.color-item {
+    height: 120px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 33.3333%;
+    flex-basis: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: $spacing-xs;
+    box-shadow: 0 5px 6px #9b9b9b;
+    border-radius: 5px;
+
+    &:hover {
+        transform: translateY(10px);
+    }
+
+    &-info {
+        color: white;
+    }
+}

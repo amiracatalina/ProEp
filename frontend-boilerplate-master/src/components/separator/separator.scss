@@ -1,0 +1,18 @@
+.separator-holder {
+  text-align: center;
+  position: relative;
+  height: auto;
+  font-size: 0;
+  line-height: 1em;
+}
+
+.separator-line {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  //style
+  width: 30px;
+  border-bottom: 2px solid #c5b358;
+  margin: 17px 0 12px;
+}

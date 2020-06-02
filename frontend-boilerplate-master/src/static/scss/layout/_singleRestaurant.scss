@@ -1,0 +1,54 @@
+.singleRestaurant {
+  .header-wrapper {
+    position: relative;
+    background-image: url("./../img/search-header.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+    z-index: auto;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(13, 13, 13, 0.4);
+      z-index: 1;
+    }
+
+    .reserve-single {
+      z-index: 2;
+      position: absolute;
+      bottom: 10%;
+      right: 20%;
+    }
+  }
+
+  .content-restaurant {
+    .about-restaurant {
+      padding-top: 120px !important;
+      padding-bottom: 60px !important;
+      text-align: center;
+
+      .title-restaurant {
+        color: rgba(0, 0, 0, 0.98);
+        letter-spacing: 15px;
+        font-family: Raleway;
+        align-self: center;
+        font-weight: 200;
+        margin-bottom: 10px;
+      }
+
+      .location-restaurant {
+        font-size: 39px;
+        font-family: "Alex Brush", cursive;
+        color: rgba(0, 0, 0, .6);
+        line-height: 1em;
+      }
+    }
+  }
+}
+
+

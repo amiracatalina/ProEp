@@ -1,0 +1,124 @@
+<div class="small-container">
+  <h1>New Tab App</h1>
+
+  <form>
+    <input id="itemName" type="text" placeholder="New">
+    <input id="itemPrice" type="text" placeholder="New">
+    <button id = "form"></button>
+  </form>
+
+  <h2>Items</h2>
+  <ul></ul>
+
+  <button id="clearAll">Clear All</button>
+</div>
+
+<script>
+  // const form = document.getElementById('form');
+  // const ul = document.querySelector('ul');
+  // const button = document.querySelector('button');
+  // const inputName = document.getElementById('itemName');
+  // const inputPrice = document.getElementById('itemPrice');
+  // let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+  // let menu = []
+  // let oneItem = {}
+  //
+  // localStorage.setItem('items', JSON.stringify(itemsArray));
+  // const data = JSON.parse(localStorage.getItem('items'));
+  //
+  // const liMaker = (text) => {
+  //   const li = document.createElement('li');
+  //   li.textContent = text;
+  //   ul.appendChild(li);
+  // }
+  //
+  //
+  //
+  // form.addEventListener('click', function (e) {
+  //   e.preventDefault();
+  //   let name = oneItem.name;
+  //   let price = oneItem.price;
+  //
+  //   oneItem.name = inputName.value;
+  //   oneItem.price = inputPrice.value;
+  //
+  //   console.log(oneItem)
+  //
+  //   menu.push(oneItem);
+  //   console.log(menu)
+  //   localStorage.setItem('items', JSON.stringify(menu));
+  //   liMaker(oneItem);
+  //   inputName.value = "";
+  //   inputPrice.value = "";
+  //
+  // });
+  //
+  // data.forEach(item => {
+  //   liMaker(item);
+  // });
+  //
+  // button.addEventListener('click', function () {
+  //   localStorage.clear();
+  //   while (ul.firstChild) {
+  //     ul.removeChild(ul.firstChild);
+  //   }
+  //   itemsArray = [];
+  // });
+
+</script>
+<script>
+  const inputName = document.getElementById('itemName');
+  const inputPrice = document.getElementById('itemPrice');
+  const ul = document.querySelector('ul');
+  const button = document.getElementById('clearAll');
+
+  function addEntry() {
+    // Parse the JSON stored in allEntriesP
+    var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+    if(existingEntries == null) existingEntries = [];
+    let itemName = document.getElementById("itemName").value;
+    let itemPrice = document.getElementById("itemPrice").value;
+    const space = " , "
+    var entry = {
+      "itemName": itemName,
+      "itemPrice": itemPrice
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existingEntries.push(entry);
+    localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+    liMaker(entry.itemName.concat(space).concat(entry.itemPrice));
+  };
+  document.getElementById("form").addEventListener("click", function(e) {
+    e.preventDefault()
+    addEntry();
+      // inputName.value = "";
+      // inputPrice.value = "";
+
+    // List of all entries
+    console.log(localStorage.getItem("allEntries"));
+    // Last entry inserted
+    // console.log(localStorage.getItem("entry"));
+  }, false);
+
+  // const data = JSON.parse(localStorage.getItem('allEntries'));
+  //
+  const liMaker = (text) => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    ul.appendChild(li);
+  }
+  //
+  // data.forEach(item => {
+  //   liMaker(item);
+  //   console.log(item)
+  // });
+  //
+  button.addEventListener('click', function () {
+    localStorage.clear();
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+    }
+    existingEntries = [];
+  });
+</script>

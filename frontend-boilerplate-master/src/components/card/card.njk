@@ -1,0 +1,20 @@
+<div class="restaurant_card" onclick="location.href=`singleRestaurant/{{ id }}`;">
+  <div class="blur_back" style="background-image: url({{ src }})" )><span class="rating">{{ rating }}</span>/10</div>
+  <div class="info_section">
+    <div class="restaurant_header">
+      <h2>{{ nameRestaurant }}</h2>
+      <div class="separator-holder clearfix" style="text-align: left">
+        <div class="separator-line"></div>
+      </div>
+      <p class="type"><i class="fas fa-concierge-bell" style="margin-right: 6px;"></i>{{ type }}</p>
+    </div>
+    <div class="restaurant_social">
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i>{{ locationRestaurant }}</li>
+        <li><i class="fas fa-comment"></i>{{ nrReviews }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

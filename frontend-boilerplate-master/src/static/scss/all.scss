@@ -1,0 +1,61 @@
+// Vendor
+@import '../../../node_modules/normalize-scss/sass/normalize/import-now';
+
+
+// Mixins
+@import 'util/position';
+@import 'util/ratio';
+@import 'util/units';
+
+// Common
+@import "common/animations";
+@import 'common/constants';
+@import 'common/lists';
+@import 'common/typography';
+
+//Layout
+@import "layout/base";
+@import "layout/default";
+@import "layout/user";
+@import "layout/home";
+@import "layout/search";
+@import "layout/style-tile";
+@import "layout/singleRestaurant";
+@import "layout/admin";
+@import "layout/userProfile";
+
+
+
+///////////Components///////////
+// text box
+@import '../../components/text-box/text-box';
+//header
+@import '../../components/header/header';
+//Buttons
+@import '../../components/button/button';
+//form components
+@import '../../components/sign-form/sign-form';
+@import '../../components/separator/separator';
+//restaurant card
+@import '../../components/card/card';
+@import "../../components/map/map";
+//Style-tile
+@import '../../components/color-item/color-item';
+@import '../../components/color-overview/color-overview';
+@import '../../components/typography-item/typography-item';
+@import '../../components/text-box/text-box';
+//carousel
+@import "../../components/carousel/carousel";
+@import '../../components/map/map';
+@import '../../components/separator/separator';
+@import '../../components/card/card';
+//picker reserve
+@import '../../components/date-time/date-time';
+@import '../../components/footer/footer';
+//tries disperat
+@import "../../components/filter-cards/filter-cards";
+@import '../../components/toggleTabs/toggleTabs';
+@import "../../components/modal-form-1/modal-form-1";
+@import "../../components/modal-form-reserve/modal-form-reserve";
+@import "../../components/restaurant-structure/restaurant-structure";
+

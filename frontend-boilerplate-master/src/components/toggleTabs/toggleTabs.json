@@ -1,0 +1,40 @@
+{
+  "nameRestaurant": "Tacos",
+  "descriptionAbout": "Welcome to Dijk9! In the center of the City of Light, or in the heart of Eindhoven, wine and food go hand in hand at Dijk9. Add to that the Brabant atmosphere and your evening will be great again! When the weather is nice, you can sit on the lovely terrace and enjoy a refreshing drink and specialties from French-international cuisine! You can find Dijk9 at Stratumsedijk 9 in Eindhoven.",
+  "descriptionMenu": "Browse through menus of your favorite restaurant. View prices and dishes at Dijk9 and determine in advance what you will eat. We do our best to regularly update the menus so that you always have the latest version of the menu at Dijk9. Quandoo bears no responsibility for the prices or availability of dishes on the Dijk9 menu.",
+  "streetAddress": "Pastoor Peterstraat 123C",
+  "postalCode": "5612LW",
+  "city": "Eindhoven",
+  "phoneRestaurant": "+31619371145",
+  "websiteRestaurant": "www.google.com",
+  "itemsMenu": [
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    },
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    },
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    },
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    },
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    },
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    },
+    {
+      "itemName": "Tacos",
+      "itemPrice": "5"
+    }
+  ]
+}

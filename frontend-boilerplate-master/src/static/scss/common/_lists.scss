@@ -1,0 +1,18 @@
+@mixin inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: $spacing-s;
+    list-style-type: none;
+
+    > * {
+        margin-right: $spacing-m;
+        @media (min-width:895px) {
+            margin-right: rem(33px);
+
+        }
+    }
+}
+
+.inline-list {
+    @include inline-list;
+}

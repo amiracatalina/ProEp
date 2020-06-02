@@ -1,0 +1,12 @@
+{
+  "buttonReserve": {
+    "href": "search",
+    "text": "Reserve",
+    "type": "btn-social"
+  },
+  "adminButton": {
+    "href": "#log",
+    "text": "Join Now",
+    "type": "btn-social"
+  }
+}

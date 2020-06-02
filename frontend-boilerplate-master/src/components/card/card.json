@@ -1,0 +1,9 @@
+{
+  "id": "133",
+  "nameRestaurant": "Tacos",
+  "src": "/static/img/food.jpg",
+  "rating": "4.5",
+  "type": ["International"],
+  "nrReviews": "11",
+  "locationRestaurant": "Centrum"
+}

@@ -1,0 +1,29 @@
+{
+  "buttons": [
+    {
+      "href":"#",
+      "text": "Read full story"
+    },
+    {
+      "href": "#",
+      "text": "Read more",
+      "size": "s"
+    },
+    {
+      "href": "#",
+      "text": "Read more",
+      "size": "social"
+    },
+    {
+      "href": "#",
+      "text": "Link Test",
+      "type": "link"
+    },
+    {
+      "href": "#",
+      "text": "Sign up with Facebook",
+      "icon": "fab fa-facebook",
+      "type": "btn-social"
+    }
+  ]
+}

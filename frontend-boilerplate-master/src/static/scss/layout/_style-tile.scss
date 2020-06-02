@@ -1,0 +1,9 @@
+.style-tile {
+    position: relative;
+    overflow-y: scroll;
+    margin: rem(50px);
+
+    &-title {
+        margin-top: $spacing-xs;
+    }
+}

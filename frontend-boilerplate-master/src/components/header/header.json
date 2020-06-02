@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "href": "home",
+      "text": "Log In"
+    },
+    {
+      "href": "aboutUs",
+      "text": "Register"
+    },
+    {
+      "href": "logIn",
+      "text": "EN"
+    }
+  ]
+}

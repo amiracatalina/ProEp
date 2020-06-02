@@ -1,0 +1,76 @@
+<div class="md-modal md-effect-12" id="modal-12">
+  {#<div class="md-content-reservation">#}
+      {#<div class="restaurant-structure-client">#}
+          {#<img src="../../static/img/floorPlan.png">#}
+      {#</div>#}
+      {#<div class="availability" style="background-image: url('../../static/img/menu-background-pattern.png')">#}
+        {#<div class="time-picker-group" id="table-picker" style="margin: 10px;">#}
+          {#<div class="field-holder clearfix">#}
+          {#<span class="field-icon">#}
+            {#<span><i class="fas fa-couch"></i></span>#}
+          {#</span>#}
+            {#<select name="ResTime" class="eltdf-ot-time">#}
+              {#<div style="overflow-y: scroll; height: 50vh">#}
+                {#<option value="1">1</option>#}
+                {#<option value="2">2</option>#}
+                {#<option value="3">3</option>#}
+                {#<option value="4">4</option>#}
+                {#<option value="5">5</option>#}
+                {#<option value="6" selected="selected">6</option>#}
+                {#<option value="7">7</option>#}
+                {#<option value="8">8</option>#}
+                {#<option value="9">9</option>#}
+              {#</div>#}
+            {#</select>#}
+          {#</div>#}
+        {#</div>#}
+        {#{% component "date-time" %}#}
+      {#</div>#}
+  {#</div>#}
+</div>
+<div class="md-overlay" style="background-image: url('../../static/img/menu-background-pattern.png')">
+  <a class="md-close" onclick="removeModal()"></a>
+  <div class="md-content-reservation">
+    <div class="restaurant-structure-client">
+      <img src="../../static/img/restaurantStructure%20(6).png">
+    </div>
+    <div class="availability" style="display: flex;flex-direction: column;justify-content: center" >
+      <h2 class="second-title" style="text-align: center">Choose a table</h2>
+      {% component "separator" %}
+      <div class="time-picker-group" id="table-picker" style="margin: 10px; width: 232px;align-self: center">
+        <div class="field-holder clearfix">
+          <span class="field-icon">
+            <span><i class="fas fa-couch"></i></span>
+          </span>
+          <select name="ResTime" class="eltdf-ot-time">
+            <div style="overflow-y: scroll; height: 50vh">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6" selected="selected">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </div>
+          </select>
+        </div>
+      </div>
+      {% component "date-time" %}
+    </div>
+  </div>
+</div>
+
+<script>
+   function removeModal() {
+     const modal = document.getElementById('modal-12');
+     modal.classList.remove('md-show');
+   }
+</script>
+
+<style>
+  #ui-datepicker-div, .ui-datepicker{
+    z-index: 4000 !important;
+  }
+</style>

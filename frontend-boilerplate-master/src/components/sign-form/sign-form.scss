@@ -1,0 +1,119 @@
+.wrapper-sign {
+  max-width: 450px;
+  margin: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  /* Form styles */
+  .signUp,
+  .signIn {
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    max-width: 450px;
+    min-height: 450px;
+    margin: auto;
+    padding: rem(13px) 0 0 0;
+
+    background: white;
+    box-shadow: 0 0 15px #333;
+
+    &::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 6px rgba(228, 228, 228, 0.9);
+      background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar
+    {
+      width: 10px;
+      background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+      background-color: $color-orange;
+      //border: 2px solid $color-orange;
+    }
+
+  }
+
+  .signIn {
+    display: none;
+    min-height: 412px;
+  }
+
+
+  form div {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  /* Input text field styles */
+
+  input {
+    font-size: 1.1em;
+    font-weight: normal;
+
+    display: block;
+
+    width: 85%;
+    margin: 0 auto;
+    height: 45px;
+
+    transition: box-shadow .3s;
+    transition: .25s linear;
+    text-align: left;
+
+    color: $color-orange;
+    border: 0;
+    outline: 0;
+    background: #eee;
+    box-shadow: 0 0 0 2px transparent;
+  }
+
+  input:focus {
+    animation: boxShadow .3s backwards;
+
+    box-shadow: 0 0 0 2px $color-orange;
+  }
+
+  /* Button styles  */
+
+  .btn {
+    float: right;
+
+    width: 50%;
+    height: auto;
+    padding-top: 23px;
+    padding-bottom: 23px;
+
+    cursor: pointer;
+
+    border: 0;
+    border-top: 1px solid #eee;
+    outline: 0;
+  }
+
+  .btn-member,
+  .btn-back {
+    font-size: .9em;
+
+    color: #333;
+    background: white;
+  }
+
+  .btn-sign-up,
+  .btn-log-in {
+    font-size: 1.2em;
+    font-weight: bold;
+
+    color: white;
+    background: $color-orange;
+  }
+
+}

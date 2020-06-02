@@ -1,0 +1,299 @@
+$z-index-header-wrapper: 10;
+$z-index-header-title: 11;
+
+//Style header
+.header {
+  &-wrapper {
+    z-index: $z-index-header-wrapper;
+    position: relative;
+    background-image: url("./../img/background-home.jpg");
+    background-position: 0%;
+    background-size: cover;
+    height: 100vh;
+
+    .item-left {
+      &-top img {
+        position: absolute;
+        top: 0;
+        left: 150px;
+        width: 51px;
+        animation: 3.2s ease-in appear;
+      }
+
+      &-bottom img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 280px;
+        animation: 3.2s cubic-bezier(0.47, 0, 0.745, 0.715) slideInFromLeft;
+
+      }
+    }
+
+    .item-right {
+      &-top img {
+        position: absolute;
+        top: -61px;
+        right: -80px;
+        width: 276px;
+        animation: 3.2s ease-in-out slideInFromRight;
+      }
+
+      &-bottom img {
+        position: absolute;
+        bottom: -162px;
+        right: -133px;
+        width: 580px;
+        animation: 3.2s ease-in-out slideInFromBottom;
+
+      }
+    }
+
+    @media screen and(max-width: 768px) {
+      .item-left {
+        &-top img {
+          width: 57px;
+        }
+
+        &-bottom img {
+          bottom: 28px;
+          width: 228px;
+        }
+      }
+
+      .item-right {
+        &-top img {
+          top: -14px;
+          right: -39px;
+          width: 230px;
+        }
+
+        &-bottom img {
+          bottom: -78px;
+          right: -128px;
+          width: 430px;
+        }
+      }
+    }
+
+
+    @media screen and(max-width: 680px) {
+      height: 80vh;
+
+      .item-left {
+        &-bottom img {
+          bottom: 45px;
+          width: 189px;
+        }
+      }
+      .item-right {
+        &-top {
+          display: none;
+        }
+
+        &-bottom {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(150px);
+    padding-left: rem(30px);
+    margin: 0 auto;
+
+    .first-title {
+      color: rgb(255, 255, 255);
+      letter-spacing: 15px;
+      font-family: Raleway;
+      align-self: center;
+    }
+
+    .second-title {
+      line-height: 45px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0px;
+      font-family: "Alex Brush";
+      align-self: center;
+    }
+
+    .button-reserve-table {
+      margin-top: rem(15px);
+      align-self: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .first-title {
+        letter-spacing: 3px;
+      }
+    }
+    @media screen and (max-width: 680px) {
+      padding-top: rem(100px);
+      .first-title {
+        letter-spacing: 3px;
+      }
+    }
+  }
+}
+
+//Class second section
+.product-description {
+  padding-top: rem(20px);
+  text-align: center;
+  margin: 0 auto;
+  width: 70vw;
+  box-sizing: border-box;
+
+  p {
+    font-size: rem(29px);
+    font-family: "Alex Brush", cursive;
+    color: rgba(0, 0, 0, .6);
+    line-height: 1em;
+  }
+}
+
+//style about us
+.about-us {
+  background-image: url("../../../static/img/about-img-2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+
+  .about-intro {
+    padding-top: rem(105px);
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    width: 70vw;
+    box-sizing: border-box;
+
+    .about-title {
+      color: white;
+      font-size: rem(29px);
+      font-family: "Alex Brush", cursive;
+      line-height: 1em;
+    }
+  }
+}
+
+.android-app {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .android-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: rem(70px);
+    padding-right: rem(70px);
+    padding-top: rem(105px);
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 70%;
+    box-sizing: border-box;
+
+    .android-title {
+      letter-spacing: 12px;
+      color: black;
+      font-size: rem(29px);
+      font-family: "Raleway", cursive;
+      line-height: 1em;
+    }
+
+    p {
+      font-size: rem(29px);
+      font-family: "Alex Brush", cursive;
+      color: rgba(0, 0, 0, .6);
+      line-height: 1em;
+    }
+  }
+
+  .photo-hover{
+    position: relative;
+
+    .eye-top{
+      z-index: -1;
+      position: absolute;
+      top: -23px;
+      left: 0;
+    }
+    .eye-center{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      animation: myOrbit 4s linear infinite;
+    }
+    .eye-bottom {
+      position: absolute;
+      bottom: 17px;
+      right: 80%;
+      animation: myOrbit 4s linear infinite;
+    }
+    .eye-top-bottom{
+      z-index: -1;
+      position: absolute;
+      bottom: -2px;
+      right: 34px;
+    }
+
+  }
+
+  @media screen and (max-width: $breakpoint-m){
+    .android-description{
+      padding-right: 0;
+    }
+    .photo-hover{
+      margin-left: 30%;
+    }
+  }
+}
+
+//join a restaurant section
+.add-restaurant {
+  background-image: url("../../../static/img/about-img-2.jpg");
+  text-align: center;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  padding-top: rem(150px);
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  width: 70vw;
+  box-sizing: border-box;
+
+  .join-title {
+    color: white;
+    font-size: rem(29px);
+    font-family: "Raleway", cursive;
+    line-height: 1em;
+  }
+
+  .family-title {
+    line-height: 45px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0px;
+    font-family: "Alex Brush";
+    align-self: center;
+  }
+  .login-admin{
+    margin-top: rem(15px);
+    align-self: center;
+  }
+}
+
+//Waves
+.wave-container {
+  z-index: 400;
+}

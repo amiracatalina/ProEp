@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Alex+Brush|Raleway|Tangerine|Tinos:400i');
+
+@mixin font-bold {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+}
+
+@mixin font-semi-bold {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+@mixin font-regular {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-light {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+@mixin font-extra-light {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+body {
+  @include font-light;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong,
+p {
+  margin-top: 0;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  @include font-bold;
+  font-size: rem(23px);
+  margin-bottom: rem(28px);
+  color: black;
+}
+
+h2 {
+  @include font-semi-bold;
+  font-size: rem(26px);
+  line-height: rem(32px);
+  margin-bottom: 0;
+  color: black;
+}
+h3 {
+  @include font-regular;
+  font-size: rem(22px);
+  line-height: rem(28px);
+  color: black;
+}
+
+.link {
+  @include font-extra-light;
+  font-size: rem(14px);
+
+  @media (min-width: 710px) {
+    font-size: rem(16px);
+  }
+}
+
+
+@media (min-width: $breakpoint-m) {
+  h1 {
+    font-size: rem(36px);
+    line-height: rem(40px);
+  }
+
+  h2 {
+    font-size: rem(30px);
+    line-height: rem(38px);
+  }
+
+  h3 {
+    font-size: rem(28px);
+    line-height: rem(30px);
+  }
+}
+
+@media (min-width: $breakpoint-l) {
+  h1 {
+    font-size: rem(43px);
+    line-height: rem(43px);
+  }
+
+  h2 {
+    font-size: rem(36px);
+    line-height: rem(42px);
+  }
+
+  h3 {
+    font-size: rem(26px);
+    line-height: rem(33px);
+  }
+}
+
+@mixin text-xs {
+  @include font-light;
+  font-size: rem(15px);
+  line-height: rem(20px);
+  margin-bottom: rem(16px);
+  @media screen and( min-width: 768px) {
+    @include text-sm
+  }
+}
+
+@mixin text-sm {
+  @include font-light;
+  font-size: rem(18px);
+  line-height: rem(30px);
+  margin-bottom: rem(25px);
+  @media screen and( min-width: 900px) {
+    @include text-l
+  }
+}
+
+@mixin text-l {
+  @include font-light;
+  font-size: rem(18px);
+  line-height: rem(30px);
+  margin-bottom: rem(26px);
+  @media screen and( min-width: 1100px) {
+    @include text-xl
+  }
+}
+
+@mixin text-xl {
+  @include font-light;
+  font-size: rem(22px);
+  line-height: rem(37px);
+  margin-bottom: rem(37px);
+}
+
+.text-xs {
+  @include text-xs;
+}
+
+.text-sm {
+  @include text-sm;
+}
+
+.text-l {
+  @include text-l;
+}
+
+.text-xl {
+  @include text-xl;
+}
+

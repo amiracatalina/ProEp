@@ -1,0 +1,63 @@
+.search{
+  .header-wrapper{
+    background-image: url("./../img/search-header.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+    z-index: auto;
+
+    .header-title{
+      text-align: center;
+      padding-top: rem(100px);
+      padding-left: 0;
+      h1{
+        color: white;
+        font-family: Raleway, sans-serif;
+      }
+    }
+
+  }
+  .all-cards{
+    .list-restaurants{
+      margin: rem(20px) 0;
+      width: 100vw;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .header-wrapper{
+      height: 100vh;
+      .header-title {
+        padding-top: rem(70px);
+        .first-title{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.isotope-pager {
+  margin: rem(40px) 0;
+  text-align: center;
+
+  a {
+    display: inline;
+    cursor: pointer;
+    margin: rem(2px);
+  }
+
+  .pager {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 3px 8px;
+    text-decoration: none;
+    color: $color-orange;
+  }
+
+  .pager:active,
+  .pager:hover {
+    background-color: $color-orange;
+    color: #fff;
+  }
+}

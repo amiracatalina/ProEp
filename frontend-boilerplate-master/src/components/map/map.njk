@@ -1,0 +1,13 @@
+<div id="map"></div>
+<script>
+  function initMap() {
+    var netherlands_coordinates = { lat: 51.4369968, lng: 5.475565 };
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: netherlands_coordinates});
+    var marker = new google.maps.Marker({position: netherlands_coordinates, map: map});
+  }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAca370O2ESYzPCTeU5uhh4p4FlD6bbAcA&callback=initMap">
+</script>

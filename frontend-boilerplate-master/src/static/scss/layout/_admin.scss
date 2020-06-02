@@ -1,0 +1,323 @@
+//.header-wrapper{
+//  background-image: url("../../img/search-header.jpg");
+//  background-size: cover;
+//  background-attachment: fixed;
+//  height: 80vh;
+//  z-index: auto;
+//}
+
+.user-body {
+  display: flex;
+  padding: rem(90px) rem(40px) !important;
+}
+
+.tab {
+  //float: left;
+  border: 1px solid rgba(228, 228, 228, 0.77);
+  width: 260px;
+  height: 545px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #c5b358;
+}
+
+/* Style the tab content */
+.tabcontent {
+  //float: left;
+  padding-left: 60px;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+
+.container-user {
+  max-width: 960px;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0 20px;
+}
+
+h1 small {
+  display: block;
+  font-size: 15px;
+  padding-top: 8px;
+  color: gray;
+}
+
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+  margin: 50px auto;
+
+  .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+
+    input {
+      display: none;
+
+      + label {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #FFFFFF;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          background: #f1f1f1;
+          border-color: #d6d6d6;
+        }
+
+        &:after {
+          color: #757575;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+
+    > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.avatar-edit i {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  color: grey;
+}
+
+.admin-group {
+  padding: rem(20px);
+  box-shadow: 0 0 10px #ccc;
+  //max-width: 800px;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(228, 228, 228, 0.9);
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: $color-orange;
+    //border: 2px solid $color-orange;
+  }
+}
+
+.admin-group-field {
+  display: flex;
+}
+
+.admin-group-field-two {
+  padding: 40px;
+}
+
+.admin-body {
+  padding: 100px 0 0 200px;
+}
+
+.admin-group-field-two {
+  .text-box-group {
+    padding-bottom: 30px;
+  }
+}
+
+.button-structure {
+  display: flex;
+  justify-content: flex-end;
+
+  .button {
+    background-color: #c5b358;
+    text-shadow: 1px 0 0 #444;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    max-height: 0;
+  }
+}
+
+.form-group {
+  margin-top: 20px;
+  //padding: 10px;
+  width: 300px;
+}
+
+.left {
+  padding-top: rem(10px);
+  //width: 40vw;
+
+  .separator-holder {
+    text-align: left;
+  }
+
+  .separator-line {
+    margin-left: rem(20px);
+    width: 20%;
+  }
+}
+
+//
+//.form-group-button .button {
+//  width: 210px;
+//}
+//
+//.form-group-button .button span {
+//  padding-left: 30px;
+//}
+//
+//.form-group-button {
+//  padding: 10px 10px 10px 30px;
+//  width: 300px;
+//}
+
+.form-group-two {
+  //padding: 0 0 0 20px;
+  // display: flex;
+  flex-wrap: wrap;
+}
+
+.form-group-title {
+  padding: rem(20px) 0 0 rem(20px);
+
+}
+
+input {
+  font-size: 1.1em;
+  font-weight: normal;
+
+  display: block;
+  padding: 10px;
+
+  //width: 85%;
+  //margin: 0 auto;
+  height: 45px;
+
+  transition: box-shadow .3s;
+  transition: .25s linear;
+  text-align: left;
+
+  color: $color-orange;
+  border: 0;
+  outline: 0;
+  background: #eee;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+input:focus {
+  animation: boxShadow .3s backwards;
+
+  box-shadow: 0 0 0 2px $color-orange;
+}
+
+.uploadOuter {
+  text-align: center;
+  padding: 20px;
+
+  strong {
+    padding: 0 10px
+  }
+}
+
+.dragBox {
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  color: #999;
+  border: 2px dashed #ccc;
+  display: inline-block;
+  transition: transform 0.3s;
+
+  input[type="file"] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
+.draging {
+  transform: scale(1.1);
+}
+
+#preview {
+  text-align: center;
+
+  img {
+    max-width: 40%
+  }
+}
+
+.preview-admin {
+  max-height: 300px;
+  max-width: 700px;
+}
+

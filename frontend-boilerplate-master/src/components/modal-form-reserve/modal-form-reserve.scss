@@ -1,0 +1,58 @@
+.md-effect-12 .md-content {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.md-show.md-effect-12 ~ .md-overlay {
+  background: rgba(128, 128, 128, 0.78);
+}
+
+.md-effect-12 .md-content h3,
+.md-effect-12 .md-content {
+  background: transparent;
+}
+
+.md-show.md-effect-12 .md-content {
+  transform: scale(1);
+  opacity: 1;
+}
+.md-content-reservation {
+  padding-top: rem(80px);
+  display: flex;
+  flex-direction: row;
+  .restaurant-structure-client{
+    img {
+      width: 600px;
+    }
+  }
+  .availability {
+  }
+}
+
+.md-close{
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+
+  &:hover {
+    opacity: 1;
+  }
+  &:before, &:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: black;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,266 @@
+.nav-restaurant-holder {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 rem(30px);
+  text-align: center;
+
+  & ul {
+    position: relative;
+    vertical-align: middle;
+
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 58px;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding: 0 10px 2px;
+
+      display: inline-block;
+      margin: 0 0 10px;
+      padding: 0 25px 2px;
+      cursor: pointer;
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    li span {
+      color: #000;
+
+      display: inline-block;
+      white-space: nowrap;
+      transition: color .2s ease-out;
+      color: #999;
+      font-size: 13px;
+      line-height: 1.5em;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #c5b358;
+        transform-origin: left;
+        transition: transform .25s ease-out;
+        transform: scale(0, 1)
+      }
+    }
+  }
+
+
+  & ul li .current span, & ul li:hover span {
+    color: #000
+  }
+
+  & ul li .current span:after, & ul li:hover span:after {
+    transform: scale(1, 1)
+  }
+
+  ul .active span {
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: #c5b358;
+      //transform-origin: left;
+      //transition: transform .25s ease-out;
+      //transform: scale(0, 1)
+    }
+  }
+
+}
+
+.tab-slider--container {
+  padding: 0 rem(100px);
+
+  .tab-slider--body {
+    .title-single-restaurant {
+      font-family: "Alex Brush", cursive;
+      font-weight: 100;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      @include text-xs;
+      font-family: Raleway;
+      color: rgba(0, 0, 0, .6);
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 0 rem(50px);
+
+  }
+}
+
+.about {
+  .personal-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 75px auto;
+
+
+    .opening-hours {
+      margin-top: rem(20px);
+      font-family: Raleway, sans-serif;
+
+      p {
+        color: grey;
+        margin: 5px 0;
+      }
+
+      .todaysDay {
+        color: black;
+      }
+
+    }
+
+    .address-telephone-website {
+      margin-top: rem(20px);
+      font-family: Raleway, sans-serif;
+    }
+
+    .fas {
+      margin-left: -30px;
+      color: gray;
+      margin-right: 8px;
+    }
+  }
+}
+
+.menu {
+  &-overview {
+    height: auto;
+    background-image: url("../../static/img/menu-background-pattern.png");
+    padding: rem(30px);
+  }
+
+  .overview-top {
+    display: flex;
+
+    .left {
+      padding-top: rem(10px);
+      width: 40vw;
+
+      .separator-holder {
+        text-align: left;
+      }
+
+      .separator-line {
+        width: 10%;
+      }
+    }
+
+    .right {
+      padding-top: rem(10px);
+      width: 40vw;
+
+      .separator-holder {
+        text-align: right;
+      }
+
+      .separator-line {
+        width: 90%;
+      }
+    }
+  }
+
+  margin-bottom: rem(30px);
+
+  &-items {
+    table {
+      width: 70%;
+      margin: 0 auto;
+      table-layout: fixed;
+      border-collapse: collapse;
+      opacity: 1;
+    }
+
+    td {
+      padding: 16px 0 0 0;
+      vertical-align: bottom;
+    }
+
+    td span {
+      background-color: #fff;
+    }
+
+    td:first-child {
+      text-align: left;
+      font-weight: 700;
+      overflow: hidden;
+      position: relative;
+    }
+
+    td:first-child::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 980px;
+      height: 0px;
+      margin-left: 16px;
+      border-bottom: 2px dotted grey;
+    }
+
+    td:last-child {
+      text-align: right;
+      width: 48px;
+    }
+  }
+}
+
+.reviews {
+  .comments-all {
+    margin-top: rem(50px);
+  }
+
+  .single-review-area {
+    margin-bottom: 50px;
+  }
+
+  .reviewer-content p {
+    margin: 0;
+    line-height: 2
+  }
+
+  .reviewer-name {
+    padding-left: 93px;
+    margin-top: 30px;
+  }
+
+  .reviewer-name p {
+    @include text-sm;
+    font-family: Raleway, sans-serif;
+    margin-bottom: 0;
+  }
+
+  .reviewer-meta > img {
+    width: 73px !important;
+    height: 73px !important;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  .review-title-ratings {
+    .separator-holder {
+      text-align: left;
+      margin-top: -20px;
+
+    }
+  }
+}
+

@@ -1,0 +1,175 @@
+{% extends '../layout/default.njk' %}
+{% set bodyClass="wrapper" %}
+{% block body %}
+  {% component "header" %}
+  <main id="main" class="search">
+    <!--Header home-->
+    <section class="header-wrapper">
+      <div class="header-title">
+        <h1 class="first-title">Reservation</h1>
+        {% component "separator" %}
+        <h2 class="second-title">Create the perfect moment</h2>
+      </div>
+      <div class="search-fields">
+        {% component "date-time" %}
+      </div>
+    </section>
+    <!--Filtering Restaurants by rating and type of cuisine-->
+    <div class="filter-by-holder">
+      {% component "filter-cards" %}
+    </div>
+    <!--All restaurants-->
+    <section class="all-cards">
+      <div class="list-restaurants">
+        {% component "cards", cardsData %}
+      </div>
+      {#<div id="pagination-container"></div>#}
+      {#<div class="pagination">#}
+      {#<ul class="pagination__list"></ul>#}
+      {#</div>#}
+    </section>
+    {% component "footer" %}
+  </main>
+
+  {#Pagination#}
+  <script>
+    $(document).ready(function() {
+      const itemSelector = '.restaurant_card'
+      const $grid = $('.list-restaurants').isotope({
+        itemSelector: '.restaurant_card',
+        layoutMode: 'vertical',
+        vertical: {
+          horizontalAlignment: 0.5
+        }
+      })
+
+      // filter functions
+      var filterFns = {
+        // show if number is greater than 50
+        numberGreaterThan5: function() {
+          var number = $(this).find('.rating').text()
+          console.log(number)
+          return parseInt(number, 10) >= 5
+        },
+        numberGreaterThan8: function() {
+          var number = $(this).find('.rating').text()
+          console.log(number)
+          return parseInt(number, 10) >= 8
+        },
+        // show if type International
+        International: function() {
+          var name = $(this).find('.type').text()
+          return name.match(/International$/)
+        },
+        Mexican: function() {
+          var name = $(this).find('.type').text()
+          return name.match(/Mexican$/)
+        }
+
+      }
+      // bind filter button click
+      $('.filters-button-group').on('click', 'button', function() {
+        var filterValue = $(this).attr('data-filter')
+        // use filterFn if matches value
+        filterValue = filterFns[filterValue] || filterValue
+        $grid.isotope({ filter: filterValue })
+      })
+      // change is-checked class on buttons
+      $('.button-group').each(function(i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup)
+        $buttonGroup.on('click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked')
+          $(this).addClass('is-checked')
+        })
+      })
+
+      //Ascending order
+      let responsiveIsotope = [
+        [480, 4],
+        [720, 6]
+      ]
+
+      const itemsPerPageDefault = 7
+      let itemsPerPage = defineItemsPerPage()
+      let currentNumberPages = 1
+      let currentPage = 1
+      let currentFilter = '*'
+      let filterAtribute = 'data-filter'
+      let pageAtribute = 'data-page'
+      let pagerClass = 'isotope-pager'
+
+      function changeFilter(selector) {
+        $grid.isotope({
+          filter: selector
+        })
+      }
+
+      function goToPage(n) {
+        currentPage = n
+        let selector = itemSelector
+        selector += (currentFilter != '*') ? '[' + filterAtribute + '="' + currentFilter + '"]' : ''
+        selector += '[' + pageAtribute + '="' + currentPage + '"]'
+
+        changeFilter(selector)
+      }
+
+      function defineItemsPerPage() {
+        let pages = itemsPerPageDefault
+        for (let i = 0; i < responsiveIsotope.length; i++) {
+          if ($(window).width() <= responsiveIsotope[i][0]) {
+            pages = responsiveIsotope[i][1]
+            break
+          }
+        }
+        return pages
+      }
+
+      function setPagination() {
+        const SettingsPagesOnItems = function() {
+          let itemsLength = $grid.children(itemSelector).length
+          let pages = Math.ceil(itemsLength / itemsPerPage)
+          let item = 1
+          let page = 1
+          let selector = itemSelector
+          selector += (currentFilter != '*') ? '[' + filterAtribute + '="' + currentFilter + '"]' : ''
+          $grid.children(selector).each(function() {
+            if (item > itemsPerPage) {
+              page++
+              item = 1
+            }
+            $(this).attr(pageAtribute, page)
+            item++
+          })
+          currentNumberPages = page
+        }()
+
+        const CreatePagers = function() {
+          let $isotopePager = ($('.' + pagerClass).length == 0) ? $('<div class="' + pagerClass + '"></div>') : $('.' + pagerClass)
+          $isotopePager.html('')
+          for (var i = 0; i < currentNumberPages; i++) {
+            let $pager = $('<a href="javascript:void(0);" class="pager" ' + pageAtribute + '="' + (i + 1) + '"></a>')
+            $pager.html(i + 1)
+            $pager.click(function() {
+              let page = $(this).eq(0).attr(pageAtribute)
+              goToPage(page)
+            })
+            $pager.appendTo($isotopePager)
+          }
+          $grid.after($isotopePager)
+        }()
+      }
+
+      setPagination()
+      goToPage(1)
+
+      $(window).resize(function() {
+        itemsPerPage = defineItemsPerPage()
+        setPagination()
+        goToPage(1)
+      })
+    })
+
+
+  </script>
+
+{% endblock %}
