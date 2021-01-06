@@ -111,7 +111,7 @@
     "@babel/runtime": "^7.1.2",
     "air-datepicker": "^2.2.3",
     "asyncawait": "^1.0.8",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "component": "^1.1.0",
     "conditioner-js": "^1.2.3",
